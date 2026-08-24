@@ -5,7 +5,7 @@ Machine*. The goal is to teach teenagers - specifically my son, when he gets a
 bit older - how to build a computer entirely from scratch.
 
 I don't mean "understand the concepts." True understanding only comes from
-building, which mens the goal of the book is to write every single line of code
+building, which means the goal of the book is to write every single line of code
 and hardware description from scratch. No massive third-party libraries, no
 closed-source IP blocks, no hand-waving.
 
@@ -183,7 +183,7 @@ with m.If(self.stb):
 
 If the master attempts a transfer and the slave stalls, the master cannot change
 its mind or alter the payload. It must hold `stb`, `addr`, `we`, `dat_w` and `sel`
-prefectly stable until the stall clears.
+prefectly stable until the stall clears or abort the transaction.
 
 ```python
 past_cyc   = Signal()
@@ -265,13 +265,20 @@ with m.Else():
 m.d.comb += Assume(timeout_count < 2)
 ```
 
+### Rule 6: Bounded Request Timeout
+
+```python
+with m.If(~self.stb & outstanding == 0):
+    m.d.comb += Assert(~self.cyc)
+```
+
 The final major pitfall is **vacuity** - a state where your assertions pass
 simply because the logic path is never actually triggered by the solver. To
 prove our logic isn't just passing vacuously, we use a coverage statement to
 force the engine to prove that full pipelined transactions can actually occur
 under our rules.
 
-### Rule 6: Pipelined Transaction Coverage
+### Rule 7: Pipelined Transaction Coverage
 ```python
 m.d.comb += Cover(self.cyc & self.stb & self.ack)
 ```
