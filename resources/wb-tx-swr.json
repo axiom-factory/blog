@@ -1,0 +1,11 @@
+{ "signal": [
+  { "name": "cyc",  "wave": "01.....0" },
+  { "name": "stb",  "wave": "01..0..." },
+  { "name": "we",  "wave": "01.0...." },
+  { "name": "addr",  "wave": "03.30...", "data": ["0x20", "0x21"] },
+  { "name": "sel",   "wave": "04.0....", "data": ["0b1111"] },
+  { "name": "dat_w", "wave": "05.0....", "data": ["0xAB"] },
+  { "name": "dat_r",  "wave": "0....30.", "data": ["0x42"] },
+  { "name": "ack",  "wave": "0...1.0.", "data": ["0xCAFEFEED"] },
+  { "name": "stall", "wave": "010....."}
+]}
