@@ -5,3 +5,8 @@ plugins:
   - jekyll-remote-theme
 repository: axiom-factory/usoc
 logo: resources/logo.svg
+aux_links:
+  "Source on GitHub":
+  - "https://github.com/axiom-factory/usoc"
+  "Follow Progress on X":
+  - "https://x.com/dvc94ch"
