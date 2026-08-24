@@ -1,6 +1,7 @@
-title: AxiomFactory Blog
-description: Building an IoT SoC for a WASM user space
+title: AxiomFactory
+description: Radical Minimalism Built from Scratch
 remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
 repository: axiom-factory/usoc
+logo: resources/logo.svg
