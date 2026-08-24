@@ -1,5 +1,5 @@
 title: AxiomFactory Blog
 description: Building an IoT SoC for a WASM user space
-remote_theme: vslat3r/cayman-max@v1.2.0
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
