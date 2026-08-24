@@ -1,4 +1,10 @@
-# Building USoC Part 2: Decoders, Dual-Port SRAM, and Fabric Assembly
+---
+layout: default
+title: "Part 2: The Fabric"
+nav_order: 3
+permalink: /fabric
+---
+# Building USoC Part 2: The Fabric
 
 In Part 1, we broke down the standard Wishbone interface and established the
 formal rules required to guarantee its correctness. Now, it's time to stitch

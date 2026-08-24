@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Part 1: The Wishbone Bus"
+nav_order: 2
+permalink: /wishbone
+---
 # Building USoC Part 1: The Wishbone Bus
 
 A few weeks ago, I started researching and outlining a book called *The Whole
