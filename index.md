@@ -5,4 +5,4 @@ IoT platform.
 
 ## Deep Dives
 * [Building USoC Part 1: The Wishbone Bus](./1-wishbone.md)
-* [Building USoC Part 2: Decoders, Dual-Port SRAM, and Fabric Assembly](./2-fabric.md)
+* [Building USoC Part 2: The Fabric](./2-fabric.md)
