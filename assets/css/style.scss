@@ -1,6 +1,20 @@
-// Scale up the logo footprint to a highly legible, professional size
+// Force the left sidebar logo container to display as an independent, prominent header block
+.site-title {
+  display: block !important;
+  height: auto !important;
+  padding: 1.5rem 0 !important; // Add some breathing room around your emblem
+}
+
+// Blow open the logo vector constraints for extreme legibility
 .site-logo {
-  max-height: 4.5rem !important; // Adjust this value up or down to set your ideal scale
+  max-height: 6rem !important;  // Adjust this value up or down to set your ideal scale
+  max-width: 100% !important;  // Allows it to fill the side column channel width smoothly
+  height: auto !important;
   width: auto !important;
-  margin-bottom: 1rem !important;
+  display: block !important;
+}
+
+// Ensure the main reading pane spreads wide for your code snippets
+.main-content {
+  max-width: 75rem !important; // Keeps your ~1200px width limit locked in
 }
