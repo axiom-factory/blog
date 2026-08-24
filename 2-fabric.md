@@ -1,4 +1,4 @@
-### Building USoC Part 2: Decoders, Dual-Port SRAM, and Fabric Assembly
+# Building USoC Part 2: Decoders, Dual-Port SRAM, and Fabric Assembly
 
 In Part 1, we broke down the standard Wishbone interface and established the
 formal rules required to guarantee its correctness. Now, it's time to stitch
@@ -9,7 +9,7 @@ the PIPE interface, and building a UART—we need to assemble our core System-on
 (SoC) fabric cleanly, elegantly, and without wasting any time on unnecessary
 architectural bloat. 
 
-### Decoders vs. Arbiters: The Multi-Master Problem
+## Decoders vs. Arbiters: The Multi-Master Problem
 
 To understand how our interconnect works, we need to quickly contrast two
 fundamental building blocks: 
@@ -40,7 +40,7 @@ Instead, we route traffic through a standard dual-ported SRAM module. Dual-port
 SRAM naturally allows for concurrent reads and writes from two separate masters
 simultaneously, as long as they aren't writing to the exact same memory address. 
 
-### Implementing the Wishbone Decoder
+## Implementing the Wishbone Decoder
 
 While we don't need an arbiter, our masters still require a decoder to route
 transactions to the correct memory addresses or peripherals. 
@@ -103,7 +103,7 @@ with m.Else():
     m.d.sync += active_slave.eq(0)
 ```
 
-### The Dual-Port SRAM Module
+## The Dual-Port SRAM Module
 
 With our decoder ready, we need an SRAM block to store data and instructions.
 To hit our target performance metrics on low-cost FPGAs, we need the hardware
@@ -148,7 +148,7 @@ m.d.sync += [
 ]
 ```
 
-### The Final Assembly
+## The Final Assembly
 
 We now have all our ingredients: Wishbone interfaces, decoders, and a dual-port
 synchronous memory module. We can wire them together into our final system fabric

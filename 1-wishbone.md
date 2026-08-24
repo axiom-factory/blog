@@ -86,7 +86,7 @@ For a 32-bit bus, the `data_width` is `32` and the `addr_width` is typically `30
 because data is accessed in whole 4-byte words. (In 64-bit designs, the address
 width is often artificially capped at a lower value to save routing resources).
 
-### How Data Moves on the Bus
+## How Data Moves on the Bus
 
 When the CPU executes a load instruction (like `lb`, `lh`, `lw`) from I-RAM it,
 it drives the target address onto `addr` and expects data back on `dat_r`. Even
@@ -140,7 +140,7 @@ To summarize this behaviour mathematically:
 - A transaction phase begins when: `cyc & stb & ~stall`
 - A transaction phase completes when: `cyc & ack`
 
-### Formally Verifying the Interconnect
+## Formally Verifying the Interconnect
 
 Now that we understand how data moves, we can establish the formal properties
 required to prove our Wishbone masters and slaves behave correctly.
