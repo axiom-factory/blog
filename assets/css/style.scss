@@ -2,26 +2,32 @@
 ---
 @import "{{ site.theme }}";
 
-// Widen the content container and fix column proportions
-div.wrapper {
-  max-width: 1200px !important; // Expands layout footprint from original ~800px
-  margin: 0 auto;
+// Widen the primary layout frame on desktop viewports
+@media screen and (min-width: 900px) {
+  div.wrapper {
+    max-width: 1200px !important; // Expands canvas from standard ~800px limit
+    margin: 0 auto;
+    display: block;
+  }
+
+  // Position the sidebar clearly on the left without floating over text
+  header {
+    width: 22% !important;
+    float: left !important;
+    position: sticky !important; // Keeps it locked when scrolling without overlap
+    top: 40px;
+  }
+
+  // Lock the reading column securely to the right channel
+  section {
+    width: 73% !important;
+    float: right !important;
+    padding-left: 2% !important;
+    box-sizing: border-box;
+  }
 }
 
-// Shrink the oversized left header/sidebar
-section {
-  width: 72% !important; // Increases text reading space
-  float: right;
-  padding-left: 40px;
-}
-
-header {
-  width: 23% !important; // Squeezes the left bar into a clean, modern anchor
-  float: left;
-  position: fixed;
-}
-
-// Ensure code blocks span the full expanded width smoothly
+// Ensure pre-formatted code frames scale cleanly to the edge
 pre, code, .highlight {
   width: 100%;
   box-sizing: border-box;
