@@ -1,0 +1,28 @@
+---
+---
+@import "{{ site.theme }}";
+
+// Widen the content container and fix column proportions
+div.wrapper {
+  max-width: 1200px !important; // Expands layout footprint from original ~800px
+  margin: 0 auto;
+}
+
+// Shrink the oversized left header/sidebar
+section {
+  width: 72% !important; // Increases text reading space
+  float: right;
+  padding-left: 40px;
+}
+
+header {
+  width: 23% !important; // Squeezes the left bar into a clean, modern anchor
+  float: left;
+  position: fixed;
+}
+
+// Ensure code blocks span the full expanded width smoothly
+pre, code, .highlight {
+  width: 100%;
+  box-sizing: border-box;
+}
